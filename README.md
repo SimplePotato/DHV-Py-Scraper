@@ -18,14 +18,14 @@ _This site publishes every new known safety issue about paragliding and hanglidi
            Paraglider Harness Progress 3</a></td>
 </tr>
 
-'''HTML
+```html
 <tr>
 	<td class="dhv_sm data datum">10.04.2018</td>
 	<td class="dhv_sm data kategorie">Safety note</td>
 	<td class="dhv_sm data bezug"><a href="/db1/source/technicdatareportnotes.php?                             lang=en&amp;item=267" class="dhv_sm bezug" target="_blank">
            Paraglider Harness Progress 3</a></td>
 </tr>
-'''
+```
 
 
 
