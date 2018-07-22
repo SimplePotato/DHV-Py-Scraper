@@ -14,18 +14,14 @@ _This site publishes every new known safety issue about paragliding and hanglidi
 <tr>
 	<td class="dhv_sm data datum">10.04.2018</td>
 	<td class="dhv_sm data kategorie">Safety note</td>
-	<td class="dhv_sm data bezug"><a href="/db1/source/technicdatareportnotes.php?                    lang=en&amp;item=267" class="dhv_sm bezug" target="_blank">
-           Paraglider Harness Progress 3</a></td>
+	<td class="dhv_sm data bezug"><a href="/db1/source/technicdatareportnotes.php?lang=en&amp;item=267" class="dhv_sm bezug" target="_blank">Paraglider Harness Progress 3</a></td>
 </tr>
-
 ```html
 <tr>
 	<td class="dhv_sm data datum">10.04.2018</td>
 	<td class="dhv_sm data kategorie">Safety note</td>
-	<td class="dhv_sm data bezug"><a href="/db1/source/technicdatareportnotes.php?                             lang=en&amp;item=267" class="dhv_sm bezug" target="_blank">
-           Paraglider Harness Progress 3</a></td>
-</tr>
-```
+	<td class="dhv_sm data bezug"><a href="/db1/source/technicdatareportnotes.php?lang=en&amp;item=267" class="dhv_sm bezug" target="_blank">Paraglider Harness Progress 3</a></td>
+</tr>```
 ___
 
 + For *older* notes I'll code a dictionary where all the released notes will be stored and then if needed, also be recalled like in a search option. The dictionary will also be necessary for the scraper to know which links were already been stored so they won't appear over and over again.
