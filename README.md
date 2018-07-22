@@ -26,6 +26,14 @@ _This site publishes every new known safety issue about paragliding and hanglidi
            Paraglider Harness Progress 3</a></td>
 </tr>
 ```
+___
+
++ For *older* notes I'll code a dictionary where all the released notes will be stored and then if needed, also be recalled like in a search option. The dictionary will also be necessary for the scraper to know which links were already been stored so they won't appear over and over again.
+
+This shouldn't be a problem because for every new release the link to it is numbered like the number at the end of the link.
+```html
+~~<a href="/db1/source/technicdatareportnotes.php?lang=en&amp;item=~~267~~"</a>~~
+```
 
 
 
