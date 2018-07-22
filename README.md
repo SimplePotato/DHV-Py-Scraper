@@ -32,7 +32,7 @@ ___
 
 This shouldn't be a problem because for every new release the link to it is numbered like the number at the end of the link.
 ```html
-~~<a href="/db1/source/technicdatareportnotes.php?lang=en&amp;item=~~267~~"</a>~~
+<a href="/db1/source/technicdatareportnotes.php?lang=en&amp;item=267"</a>
 ```
 
 
