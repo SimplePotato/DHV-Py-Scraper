@@ -3,12 +3,12 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import re
 from datetime import datetime as dt
-
+'''
     #Now Date
 today = dt.now()
-date_string = dt.strftime(today, '%m.%d.%Y') #the date is in the same format as the date in a ckass="dhv_sm data datum"
-print('\n' + date_string + '\n') 
-print('\n'+"----------------"+'\n')
+date_string = dt.strftime(today, '%m.%d.%Y') #the date is in the same format as the date in a class="dhv_sm data datum"
+print(date_string) 
+'''
 
     #Source HTML Code
 '''<tr>
@@ -18,31 +18,22 @@ print('\n'+"----------------"+'\n')
    </tr>
 ''' 
 
-    #Source  
+    #Source
 html = urlopen("https://www.dhv.de/en/safety/safety-notes/")
 soup = BeautifulSoup(html, "lxml")
 
-    #get category of a notice
+    #scraped data
+datum = soup.find_all("td", class_="datum")
 kat = soup.find_all("td", class_="kategorie")
-for kategorie in kat:
-    print(kategorie.text)
-
-    #I get a list of category successfully, but I don't know how to implement them into final print???
-
-print('\n'+"----------------"+'\n')
-
-    #Get product name
 productName = soup.find_all("td", "a", class_="bezug")
-for product in productName:
-    print(product.text)
-
-    #I get a list of items successfully, but I don't know how to implement them into final print???
-
-print('\n'+"----------------"+'\n')
-
-    #Get source link and add aditional text + "item"
 safetyNoticeLink = soup.find_all('a', {'class': 'dhv_sm bezug', 'href': True})
-for link in safetyNoticeLink:
-    #print('DHV releases IMPORTANT SAFETY notice about' + '  ' + item + '\n' 'To read more information about this IMPORTANT safety notice, click on the following link' + '\n' '\n' 'https://www.dhv.de/' + sNoticeLink['href'] + '\n' '\n' '\n')
-    print('https://www.dhv.de/' + link['href'])
-    
+
+    #going trough all the data in the tables with for loop and skip the first TR with empty TD with [1:] -means skip first element. (if we want to skip last element we chose [:-1])
+for datum,kat,productName,safetyNoticeLink in zip(datum[1:],kat[1:],productName[1:],safetyNoticeLink):
+    print('\n'+'\n')
+    print('\n')
+    print(datum.text)
+    print('\n' + '------------------------------------------')
+    print('DHV has released ' + kat.text + ' about ' + productName.text + '.')
+    print('------------------------------------------' + '\n') 
+    print('For more information about this notice please visit link below' + '\n'+ '\n' + 'https://www.dhv.de/' + safetyNoticeLink['href'])
