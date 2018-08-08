@@ -73,37 +73,21 @@ except AttributeError() as e:
     print("There\'s something wrong with a tag attribute")
 
 
-    #Grab all the data in the tables with for loop and skip the first TR with empty TD with [1:] -means skip first element. (if we want to skip last element we chose [:-1])
+    
 else:
-
+    #Grab all the data from tables with for loop and skip the first TR with empty TD with [1:] which means skip first element. (if we want to skip last element we chose [:-1])
     for datum,kat,productName,safetyNoticeLink in zip(datum[1:],kat[1:],productName[1:],safetyNoticeLink):
 
     #Print out only if date is equal as todays date (Can choose betwen todayDate and fakeDate but this is for testing only)
-        if str(fakeDate()) != str(datum):
+        if str(fakeDate()) == str(datum.text):
             print("\n" + "\n")
             print(datum.text)
             print("\n" + "------------------------------------------")
             print("title: " + kat.text + ": " + productName.text + ".")    #title: (DHV has released )
-            print("------------------------------------------" + "\n") 
+            print("------------------------------------------" + "\n")
             print("msg:" + "\n"+ "\n" + "https://www.dhv.de/" + safetyNoticeLink["href"])    #msg: (For more info please visit the link below)  link (https://www.dhv.de/)
-            
-        else:
+        if str(fakeDate()) != str(datum.text):
             print("Nothing to worry about")
             break
-    '''
-    I'm doing something wrong with the if statement at row 82.
-    A datum is a scraped date which is always now ( date when notice was released).
-    I create fakeDate function just for the purpose of testing and is always set to one of the dates when the notice was released.
-    
-    When I set...
-    if str(fakeDate()) == str(datum):
-        print("Safety Note)
-    else:
-        print("nothing new")
-
-    but here is the issue. The set fakeDate is always equal to datum and the output is always the opposite!
-    If I set fakeDate != datum which shouldn't return issued notes it returns exactly that.
-
-    What am I doing wrong?    
-
-    '''
+        else:
+            break
